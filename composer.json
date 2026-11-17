@@ -1,0 +1,12 @@
+{
+    "name": "iutnc/deefy",
+    "description": "Mini-projet Deefy",
+    "autoload": {
+        "psr-4": {
+            "iutnc\\deefy\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}
