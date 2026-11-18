@@ -3,6 +3,9 @@
 namespace iutnc\deefy\Dispatch;
 
 use iutnc\deefy\Action\DefaultAction;
+use iutnc\deefy\Action\MyPlaylistsAction;
+use iutnc\deefy\Action\DisplayPlaylistAction;
+use iutnc\deefy\Action\CurrentPlaylistAction;
 
 class Dispatcher {
 
@@ -14,7 +17,22 @@ class Dispatcher {
 
     public function run(): void {
         switch ($this->action) {
-            case 'default':
+            case 'my-playlists':
+                $act = new MyPlaylistsAction();
+                break;
+
+            case 'display-playlist':
+                $act = new DisplayPlaylistAction();
+                break;
+            
+            case 'current-playlist':
+                $act = new CurrentPlaylistAction();
+                break;
+
+            case 'add-playlist':
+                $act = new AddPlaylistAction();
+                break;
+
             default:
                 $act = new DefaultAction();
                 break;
