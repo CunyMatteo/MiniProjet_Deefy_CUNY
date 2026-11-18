@@ -149,4 +149,9 @@ class DeefyRepository{
         ]);
     }
 
+    public function findAllPlaylists(): array {
+        $stmt = $this->pdo->query("SELECT id, nom FROM playlist");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 }
