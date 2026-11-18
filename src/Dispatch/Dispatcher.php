@@ -6,6 +6,8 @@ use iutnc\deefy\Action\DefaultAction;
 use iutnc\deefy\Action\MyPlaylistsAction;
 use iutnc\deefy\Action\DisplayPlaylistAction;
 use iutnc\deefy\Action\CurrentPlaylistAction;
+use iutnc\deefy\Action\AddPlaylistAction;
+use iutnc\deefy\Action\AddPodcastTrackAction;
 
 class Dispatcher {
 
@@ -31,6 +33,10 @@ class Dispatcher {
 
             case 'add-playlist':
                 $act = new AddPlaylistAction();
+                break;
+
+            case 'add-track':
+                $act = new AddPodcastTrackAction();
                 break;
 
             default:
