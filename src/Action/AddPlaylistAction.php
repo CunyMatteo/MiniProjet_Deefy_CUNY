@@ -33,13 +33,9 @@ class AddPlaylistAction extends Action {
         $repo = DeefyRepository::getInstance();
         $playlist = $repo->saveEmptyPlaylist($playlist);
 
-        // Elle devient la playlist courante
         $_SESSION['playlist'] = $playlist;
 
-        $renderer = new AudioListRenderer($playlist);
-        $html = $renderer->render(Renderer::COURT);
-        $html .= "<p><a href='?action=add-track'>Ajouter une piste</a></p>";
-
-        return $html;
+        header('Location: ?action=current-playlist');
+        exit;
     }
 }

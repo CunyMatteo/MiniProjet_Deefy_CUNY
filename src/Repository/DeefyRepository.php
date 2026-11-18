@@ -22,7 +22,7 @@ class DeefyRepository{
     public static function setConfig(string $fichier) :void{
         $conf = parse_ini_file($fichier);
         if ($conf===false){
-            Throw new \Exception("Chargement du fichier .ini impossible");
+            throw new \Exception("Chargement du fichier .ini impossible");
         }else{
             self::$config = $conf;
         }
@@ -85,7 +85,7 @@ class DeefyRepository{
         $query = "INSERT INTO playlist (nom) VALUES (:nom)";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute(['nom' => $pk->nomPlaylist]);
-        $pk->setId($this->pdo->lastInsertId());
+        $pk->setId((int) $this->pdo->lastInsertId());
         return $pk;
     }
 

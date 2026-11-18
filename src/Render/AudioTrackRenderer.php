@@ -18,7 +18,7 @@ abstract class AudioTrackRenderer implements Renderer{
             if ($selecteur === self::LONG){
             return $this->renderLong();
             }else{
-                Throw new \Exception("Format de rendu invalide");
+                throw new \Exception("Format de rendu invalide");
             }
         }
     }
